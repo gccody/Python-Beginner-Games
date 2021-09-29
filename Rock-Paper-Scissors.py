@@ -1,6 +1,8 @@
 from random import randint
 import os
 
+os.system('cls')
+
 wStreak = 0
 lStreak = 0
 tStreak = 0
