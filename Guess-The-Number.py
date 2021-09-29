@@ -1,8 +1,6 @@
 from random import *
 import os
 
-os.system('cls')
-
 min = 1
 max = 1000
 
@@ -59,33 +57,39 @@ def getMax():
     os.system('cls')
     return max
 
-while True:
+def main():
     os.system('cls')
-    min = getMin()
-    max = getMax()
-    number = numberToGuess(min, max)
-    while True:
-        guess = getGuess(min, max)
-        if (higherLower(number, guess) == 1):
-            print("The number is lower!")
-        elif(higherLower(number, guess) == -1):
-            print("The number is higher!")
-        else:
-            print("You guessed it!")
-            break
-    while True:
-        cont = input("\nWould you like to play agian? (y/n)")
-        cont.lower()
-        if (cont == "y" or cont == "n"):
-            break
-        else:
-            os.system('cls')
-            print("You entered an invalid answer please try again")
-            input("Press enter to continue... ")
-            os.system('cls')
-    if (cont == "n"):
-        break
 
-os.system('cls')
-print("Goodbye")
-input("Press enter to close... ")
+    while True:
+        os.system('cls')
+        min = getMin()
+        max = getMax()
+        number = numberToGuess(min, max)
+        while True:
+            guess = getGuess(min, max)
+            if (higherLower(number, guess) == 1):
+                print("The number is lower!")
+            elif(higherLower(number, guess) == -1):
+                print("The number is higher!")
+            else:
+                print("You guessed it!")
+                break
+        while True:
+            cont = input("\nWould you like to play agian? (y/n)")
+            cont.lower()
+            if (cont == "y" or cont == "n"):
+                break
+            else:
+                os.system('cls')
+                print("You entered an invalid answer please try again")
+                input("Press enter to continue... ")
+                os.system('cls')
+        if (cont == "n"):
+            break
+
+    os.system('cls')
+    print("Goodbye")
+    input("Press enter to close... ")
+
+if __name__ == '__main__':
+    main()
