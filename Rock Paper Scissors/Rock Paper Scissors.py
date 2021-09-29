@@ -16,9 +16,17 @@ def aiAnswer():
     return a
 
 def getGuess():
-    print("Enter your guess")
-    guess = input("Rock paper scissors ... ")
-    guess.lower()
+    while True:
+        print("Enter your guess")
+        guess = input("Rock paper scissors ... ")
+        guess.lower()
+        if(guess == "rock" or guess == "paper" or guess == "scissors"):
+            break
+        else:
+            os.system('cls')
+            print(guess + " is not a real answer. please respond with rock, paper, or scissors.")
+            input("Press Enter to continue... ")
+            os.system('cls')
     return guess
 
 def winCheck(a, guess):
@@ -64,10 +72,17 @@ while True:
     print("Most loses in a row: " + str(lBest))
     print("Most ties in a row: " + str(tBest))
     
-    c = input("\nWould you like to continue? (y/n) ")
-    c.lower()
-    if (c == "n"):
+    while True:
+        c = input("\nWould you like to continue? (y/n) ")
+        c.lower()
+        if (c == "n" or c == "y"):
+            break
+        else:
+            print("\nPlease enter a correct response. y or n")
+            input("Press enter to continue... ")
+    if(c == "n"):
         break
+    
 
     os.system('cls')
 os.system('cls')
@@ -76,4 +91,4 @@ print("Most loses in a row: " + str(lBest))
 print("Most ties in a row: " + str(tBest))
 print("\nGoodBye")
 
-time.sleep(3)
+input("\nPress enter to close... ")
