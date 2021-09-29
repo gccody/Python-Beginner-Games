@@ -1,6 +1,8 @@
 from random import *
 import os
 
+os.system('cls')
+
 min = 1
 max = 1000
 
