@@ -1,9 +1,19 @@
 from random import *
 import os
-os.system('cls')
 
-llist = []
+def main():
+    os.system('cls')
 
-for i in range(100):
-    llist.append(randint(0,100))
+    llist = []
 
+    for i in range(100):
+        llist.append(randint(0,100))
+
+    print(llist)
+
+    llist.sort()
+
+    print(llist)
+
+if __name__ == '__main__':
+    main()
