@@ -1,9 +1,6 @@
 from random import *
 import os
 
-min = 1
-max = 1000
-
 def numberToGuess(min, max):
     number = randint(min,max)
     return number
