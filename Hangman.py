@@ -7,7 +7,7 @@ def instructions():
 def check(word, guess):
     a = []
     for i in range(len(word)):
-        if (word[i] == guess):
+        if (word[i] == guess.lower()):
             a.append(i)
     if(a == []):
         return 0
@@ -17,7 +17,7 @@ def check(word, guess):
 
 def playerOne():
     word = input("\nEnter word you would like to be guessed: ")
-    return list(word)
+    return list(word.lower())
 
 def hideWord(word):
     a = []
@@ -38,6 +38,8 @@ def listToString(hidden):
 def playerTwo(word, hidden):
     os.system('cls')
 
+    final = word
+
     misses = 6
 
     while True:
@@ -54,26 +56,42 @@ def playerTwo(word, hidden):
         else:
             a = check(word, guess)
             for char in a:
-                hidden[char] = guess
-        
+                hidden[char] = guess.lower()
+
         if(misses < 0):
             break
 
         if(hidden.count("_") == 0):
             break
+        else:
+            print("You have " + str(misses) + " misses left!")
     
     if (hidden.count("_") == 0):
         print(listToString(word))
         print("You guessed it!")
     else:
-        print()
+        print("You failed. \nThe word is... " + listToString(word))
 
 def main():
+    while True:
+        os.system('cls')
+        instructions()
+        word = playerOne()
+        hidden = hideWord(word)
+        playerTwo(word, hidden)
+        while True:
+            cont = input("Would you like to play again? (y/n):  ")
+            cont.lower()
+            if(cont == "yes" or cont == "y" or cont == "no" or cont == "n"):
+                break
+            else:
+                print("Please enter (y/n)")
+                input("Press enter to continue... ")
+        if(cont == "no" or cont == "n"):
+            break
     os.system('cls')
-    instructions()
-    word = playerOne()
-    hidden = hideWord(word)
-    playerTwo(word, hidden)
+    print("Goodbye")
+    input("Please press enter to continue... ")
 
 if __name__ == '__main__':
     main()
