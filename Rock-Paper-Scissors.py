@@ -1,8 +1,6 @@
 from random import randint
 import os
 
-os.system('cls')
-
 wStreak = 0
 lStreak = 0
 tStreak = 0
@@ -38,58 +36,63 @@ def winCheck(a, guess):
     else:
         return 0
 
-while True:
-    a = aiAnswer()
-    guess = getGuess()
-    print("I guess ... " + a)
-    b = winCheck(a, guess)
+def main():
+    os.system('cls')
+    while True:
+        a = aiAnswer()
+        guess = getGuess()
+        print("I guess ... " + a)
+        b = winCheck(a, guess)
 
-    if(b == 1):
-        print("\nYou Win!")
-        wStreak += 1
-        lStreak = 0
-        tStreak = 0
-        print("You are on a win streak of " + str(wStreak))
-        if(wStreak > wBest):
-            wBest = wStreak
-    elif(b == 2):
-        print("\nWe Tied")
-        wStreak = 0
-        lStreak = 0
-        tStreak += 1
-        print("You are on a tie streak of " + str(tStreak))
-        if(tStreak > tBest):
-            tBest = tStreak
-    else:
-        print("\nYou Lost")
-        wStreak = 0
-        lStreak += 1
-        tStreak = 0
-        print("You are on a losing streak of " + str(lStreak))
-        if(lStreak > lBest):
-            lBest = lStreak
-    
-    print("\nMost wins in a row : " + str(wBest))
+        if(b == 1):
+            print("\nYou Win!")
+            wStreak += 1
+            lStreak = 0
+            tStreak = 0
+            print("You are on a win streak of " + str(wStreak))
+            if(wStreak > wBest):
+                wBest = wStreak
+        elif(b == 2):
+            print("\nWe Tied")
+            wStreak = 0
+            lStreak = 0
+            tStreak += 1
+            print("You are on a tie streak of " + str(tStreak))
+            if(tStreak > tBest):
+                tBest = tStreak
+        else:
+            print("\nYou Lost")
+            wStreak = 0
+            lStreak += 1
+            tStreak = 0
+            print("You are on a losing streak of " + str(lStreak))
+            if(lStreak > lBest):
+                lBest = lStreak
+        
+        print("\nMost wins in a row : " + str(wBest))
+        print("Most loses in a row: " + str(lBest))
+        print("Most ties in a row: " + str(tBest))
+        
+        while True:
+            c = input("\nWould you like to continue? (y/n) ")
+            c.lower()
+            if (c == "n" or c == "y"):
+                break
+            else:
+                print("\nPlease enter a correct response. y or n")
+                input("Press enter to continue... ")
+        if(c == "n"):
+            break
+        
+
+        os.system('cls')
+    os.system('cls')
+    print("Most wins in a row : " + str(wBest))
     print("Most loses in a row: " + str(lBest))
     print("Most ties in a row: " + str(tBest))
-    
-    while True:
-        c = input("\nWould you like to continue? (y/n) ")
-        c.lower()
-        if (c == "n" or c == "y"):
-            break
-        else:
-            print("\nPlease enter a correct response. y or n")
-            input("Press enter to continue... ")
-    if(c == "n"):
-        break
-    
+    print("\nGoodBye")
 
-    os.system('cls')
-os.system('cls')
-print("Most wins in a row : " + str(wBest))
-print("Most loses in a row: " + str(lBest))
-print("Most ties in a row: " + str(tBest))
-print("\nGoodBye")
+    input("\nPress enter to close... ")
 
-input("\nPress enter to close... ")
+if __name__ == '__main__':
+    main()
