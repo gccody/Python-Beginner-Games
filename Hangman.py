@@ -1,6 +1,7 @@
 import os
 
 def instructions():
+<<<<<<< HEAD
     print("This is a two player game. \nThe first player will choose the word. \nThe second player will try and guess it. \nYou get 6 misses to guess the word")
     input("Press enter to continue... ")
 
@@ -77,6 +78,13 @@ def main():
 
     
 
+=======
+    os.system('cls')
+    print("This is a two player game. Please have one player enter the word")
+
+def main():
+    os.system('cls')
+>>>>>>> 5e09ca66ae1034f29254d0e5c9dd51e600b2c2ad
 
 if __name__ == '__main__':
     main()
