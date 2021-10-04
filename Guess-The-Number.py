@@ -85,8 +85,8 @@ def main():
             break
 
     os.system('cls')
-    print("Goodbye")
-    input("Press enter to close... ")
+    input("Press enter to go back to main menu... ")
+    os.system("Main.py")
 
 if __name__ == '__main__':
     main()

@@ -20,7 +20,8 @@ def main():
     os.system('cls')
     password = getPassword()
     print(password)
-    input("")
+    input("Press enter to return to menu..")
+    os.system("Main.py")
 
 if __name__ == '__main__':
     main()

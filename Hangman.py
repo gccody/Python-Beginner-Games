@@ -90,8 +90,8 @@ def main():
         if(cont == "no" or cont == "n"):
             break
     os.system('cls')
-    print("Goodbye")
-    input("Please press enter to continue... ")
+    input("Please press enter to return to menu... ")
+    os.system("Main.py")
 
 if __name__ == '__main__':
     main()

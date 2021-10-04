@@ -10,10 +10,11 @@ def main():
         llist.append(randint(0,100))
 
     print(llist)
-
     llist.sort()
-
     print(llist)
+
+    input("Press enter to return to menu...")
+    os.system("Main.py")
 
 if __name__ == '__main__':
     main()

@@ -1,13 +1,6 @@
 from random import randint
 import os
 
-wStreak = 0
-lStreak = 0
-tStreak = 0
-wBest = 0
-lBest = 0
-tBest = 0
-
 def aiAnswer():
     a = randint(0,2)
     alist = ["rock", "paper", "scissors"]
@@ -37,6 +30,13 @@ def winCheck(a, guess):
         return 0
 
 def main():
+    wStreak = 0
+    lStreak = 0
+    tStreak = 0
+    wBest = 0
+    lBest = 0
+    tBest = 0
+
     os.system('cls')
     while True:
         a = aiAnswer()
@@ -92,7 +92,8 @@ def main():
     print("Most ties in a row: " + str(tBest))
     print("\nGoodBye")
 
-    input("\nPress enter to close... ")
+    input("\nPress enter to return to menu... ")
+    os.system("Main.py")
 
 if __name__ == '__main__':
     main()
